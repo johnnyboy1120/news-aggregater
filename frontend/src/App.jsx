@@ -5,6 +5,7 @@ import ArticleGrid from './components/ArticleGrid';
 import PoliticsFilter from './components/PoliticsFilter';
 import TrendingSection from './components/TrendingSection';
 import BookmarksList from './components/BookmarksList';
+import StockBar, { MobileStockStrip } from './components/StockBar';
 import { useNews } from './hooks/useNews';
 import { useBookmarks } from './hooks/useBookmarks';
 
@@ -41,7 +42,6 @@ export default function App() {
     localStorage.setItem('pulse_dark', String(darkMode));
   }, [darkMode]);
 
-  // Reset pagination when category/bias/search changes
   useEffect(() => { setVisibleCount(24); }, [activeCategory, bias, searchQuery]);
 
   const filteredArticles = useMemo(() => {
@@ -83,30 +83,37 @@ export default function App() {
         onChange={handleCategoryChange}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {activeCategory === 'politics' && !showBookmarks && (
-          <PoliticsFilter bias={bias} onChange={setBias} />
-        )}
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:flex lg:gap-6 lg:items-start">
+        {/* ── News content ── */}
+        <main className="flex-1 min-w-0">
+          <MobileStockStrip />
+          {activeCategory === 'politics' && !showBookmarks && (
+            <PoliticsFilter bias={bias} onChange={setBias} />
+          )}
 
-        {!showBookmarks && !searchQuery && articles.length > 0 && (
-          <TrendingSection articles={articles} onSearch={setSearchQuery} />
-        )}
+          {!showBookmarks && !searchQuery && articles.length > 0 && (
+            <TrendingSection articles={articles} onSearch={setSearchQuery} />
+          )}
 
-        {showBookmarks ? (
-          <BookmarksList bookmarks={bookmarks} onRemove={toggleBookmark} />
-        ) : (
-          <ArticleGrid
-            articles={displayedArticles}
-            loading={loading}
-            error={error}
-            onRetry={refetch}
-            onBookmark={toggleBookmark}
-            isBookmarked={isBookmarked}
-            hasMore={hasMore}
-            onLoadMore={() => setVisibleCount(n => n + 24)}
-          />
-        )}
-      </main>
+          {showBookmarks ? (
+            <BookmarksList bookmarks={bookmarks} onRemove={toggleBookmark} />
+          ) : (
+            <ArticleGrid
+              articles={displayedArticles}
+              loading={loading}
+              error={error}
+              onRetry={refetch}
+              onBookmark={toggleBookmark}
+              isBookmarked={isBookmarked}
+              hasMore={hasMore}
+              onLoadMore={() => setVisibleCount(n => n + 24)}
+            />
+          )}
+        </main>
+
+        {/* ── Desktop stock sidebar ── */}
+        <StockBar />
+      </div>
     </div>
   );
 }
