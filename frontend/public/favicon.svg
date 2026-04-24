@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3b82f6"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
-  <rect width="100" height="100" rx="22" fill="url(#g)"/>
-  <text x="50" y="70" font-family="system-ui,sans-serif" font-size="62" font-weight="800" text-anchor="middle" fill="white">P</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#111827"/>
+  <rect x="7" y="8" width="18" height="2.5" rx="1.25" fill="white"/>
+  <rect x="7" y="13.75" width="12" height="2.5" rx="1.25" fill="white"/>
+  <rect x="7" y="19.5" width="15" height="2.5" rx="1.25" fill="white"/>
 </svg>

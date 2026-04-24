@@ -10,15 +10,15 @@ import { useNews } from './hooks/useNews';
 import { useBookmarks } from './hooks/useBookmarks';
 
 export const CATEGORIES = [
-  { id: 'all',         label: 'Top Stories',  emoji: '🌐', color: 'text-blue-500' },
-  { id: 'ai',          label: 'AI',            emoji: '🤖', color: 'text-purple-500' },
-  { id: 'technology',  label: 'Technology',    emoji: '💻', color: 'text-blue-500' },
-  { id: 'science',     label: 'Science',       emoji: '🔬', color: 'text-emerald-500' },
-  { id: 'politics',    label: 'Politics',      emoji: '🏛️', color: 'text-red-500' },
-  { id: 'environment', label: 'Environment',   emoji: '🌿', color: 'text-green-500' },
-  { id: 'finance',     label: 'Finance',       emoji: '📈', color: 'text-amber-500' },
-  { id: 'weather',     label: 'Weather',       emoji: '🌤️', color: 'text-sky-500' },
-  { id: 'wars',        label: 'World Affairs', emoji: '🌍', color: 'text-rose-600' },
+  { id: 'all',         label: 'Top Stories',  color: 'text-blue-500' },
+  { id: 'ai',          label: 'AI',           color: 'text-purple-500' },
+  { id: 'technology',  label: 'Technology',   color: 'text-blue-500' },
+  { id: 'science',     label: 'Science',      color: 'text-emerald-500' },
+  { id: 'politics',    label: 'Politics',     color: 'text-red-500' },
+  { id: 'environment', label: 'Environment',  color: 'text-green-500' },
+  { id: 'finance',     label: 'Finance',      color: 'text-amber-500' },
+  { id: 'weather',     label: 'Weather',      color: 'text-sky-500' },
+  { id: 'wars',        label: 'World Affairs',color: 'text-rose-600' },
 ];
 
 export default function App() {

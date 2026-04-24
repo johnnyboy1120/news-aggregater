@@ -12,12 +12,18 @@ export default function Header({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 h-14">
           {/* Logo */}
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white text-sm font-bold">P</span>
+          <div className="flex items-center gap-2.5 flex-shrink-0">
+            <div className="w-8 h-8 flex items-center justify-center">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#111827" className="dark:hidden" />
+                <rect width="32" height="32" rx="8" fill="#F3F4F6" className="hidden dark:block" />
+                <rect x="7" y="8" width="18" height="2.5" rx="1.25" fill="white" className="dark:fill-gray-900" />
+                <rect x="7" y="14" width="12" height="2.5" rx="1.25" fill="white" className="dark:fill-gray-900" />
+                <rect x="7" y="20" width="15" height="2.5" rx="1.25" fill="white" className="dark:fill-gray-900" />
+              </svg>
             </div>
-            <span className="text-lg font-bold text-gray-900 dark:text-white hidden sm:block">
-              Pulse
+            <span className="text-base font-semibold tracking-tight text-gray-900 dark:text-white hidden sm:block">
+              News Central
             </span>
           </div>
 
